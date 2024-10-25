@@ -1,8 +1,12 @@
 import requests
 import time
 import csv
+from dotenv import load_dotenv
+import os
 
-API_key = "926d59c90d8d400587f3f460ba8dfd53"
+load_dotenv()
+
+API_key = os.getenv('API_KEY')
 ticker = "GOOG"
 
 
@@ -27,3 +31,5 @@ def get_stock_price(ticker_symbol, api):
         
 
 stock_price = get_stock_price(ticker, API_key)
+
+print(stock_price)
